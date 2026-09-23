@@ -3,8 +3,6 @@
  */
 package com.mycompany.binarysearch;
 import java.util.Scanner;
-import java.util.Random;
-import java.util.Arrays;
 
 /**
  *
@@ -35,22 +33,15 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
+        int[] linearArray = {45, 12, 78, 34, 23, 89, 56};
+        int[] binaryArray = {12, 23, 34, 45, 56, 78, 89}; 
+
         Scanner sc = new Scanner(System.in);
-        Random rand = new Random();
-        System.out.println("Enter the size of an array: ");
-        int size = sc.nextInt();
-        int[] arr = new int[size];
-        for(int i =0; i< arr.length;i++){
-            arr[i] = rand.nextInt(2000);
-            System.out.println(arr[i]);
-        }
-        Arrays.sort(arr);
-       
         System.out.println("Enter a value to search: ");
         int target = sc.nextInt();
 
-        int linearResult = linearSearch(arr, target);
-        int binaryResult = binarySearch(arr, target, 0, arr.length - 1);
+        int linearResult = linearSearch(linearArray, target);
+        int binaryResult = binarySearch(binaryArray, target, 0, binaryArray.length - 1);
 
         System.out.println("Target value: " + target);
         if (linearResult != -1) {
